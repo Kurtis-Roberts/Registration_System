@@ -1,6 +1,6 @@
 <?php
 
-$proles = array( 'Admin');
+$proles = array('Admin');
 require_once 'checksession.php';
 
 require_once 'dbinfo.php';
@@ -54,7 +54,7 @@ if ($conn->connect_error) die($conn->connect_error);
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-cog fa-2x"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        
+
                         <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>
                 </li>
@@ -74,7 +74,7 @@ if ($conn->connect_error) die($conn->connect_error);
                     <i class="fas fa-user-edit fa-5x fa-border" data-toggle="modal" data-target="#myModal">
                 </button></i>
                 <div class="student-info-container">
-                    <h3 class="modal-title">Create an Faculty</h3>
+                    <h3 class="modal-title">Add a Faculty Member</h3>
                 </div>
                 <hr style="width: 99%; color: white; height: 1px;;background-color:white;" />
 
@@ -108,7 +108,7 @@ if ($conn->connect_error) die($conn->connect_error);
                     <div class="form-row">
 
                         <label for="Faculty_ID"></label>
-						<?php $Faculty_ID = rand(10001,32768); ?>
+                        <?php $Faculty_ID = rand(10001, 32768); ?>
                         <input type="hidden" class="form-control" name="Faculty_ID" Value="<?php echo $Faculty_ID; ?>" />
 
                         <div class="form-group col-md-6">
@@ -119,19 +119,19 @@ if ($conn->connect_error) die($conn->connect_error);
                             <label for="Lname">Last Name</label>
                             <input type="text" class="form-control" name="Lname" id="Lname" Value="Smith" />
                         </div>
-						<div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
                             <label for="Title">Title</label>
                             <input type="text" class="form-control" name="Title" id="Title" Value="Adjunct" />
                         </div>
-						<div class="form-group col-md-6">
-							<label for="Program">Program</label>
-							<select name="Program" id="Program" class="form-control">
-								<option selected placeholder> Select One </option>
-								<option value="1">Information Systems</option>
-								<option value="2">Biomedical Engineering</option>
-							</select>
-						</div>
-                    
+                        <div class="form-group col-md-6">
+                            <label for="Program">Program</label>
+                            <select name="Program" id="Program" class="form-control">
+                                <option selected placeholder> Select One </option>
+                                <option value="1">Information Systems</option>
+                                <option value="2">Biomedical Engineering</option>
+                            </select>
+                        </div>
+
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Save</button>
                 </form>
@@ -151,8 +151,8 @@ if (
 ) {
     $fname = $_POST['Fname'];
     $lname = $_POST['Lname'];
-	$title = $_POST['Title'];
-	$program = $_POST['Program'];
+    $title = $_POST['Title'];
+    $program = $_POST['Program'];
     echo $state;
     $query = "INSERT into Faculty (Faculty_ID, Fname, Lname, Title, Program_ID)
 				VALUES ($Faculty_ID, '$fname', '$lname', '$title', $program);";
