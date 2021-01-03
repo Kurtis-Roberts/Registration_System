@@ -75,7 +75,7 @@ if ($conn->connect_error) die($conn->connect_error);
                     <i class="fas fa-user-edit fa-5x fa-border" data-toggle="modal" data-target="#myModal">
                 </button></i>
                 <div class="student-info-container">
-                    <h3 class="modal-title">Create a Student</h3>
+                    <h3 class="modal-title">Add a Student</h3>
                 </div>
                 <hr style="width: 99%; color: white; height: 1px;;background-color:white;" />
 
@@ -109,7 +109,7 @@ if ($conn->connect_error) die($conn->connect_error);
                     <div class="form-row">
 
                         <label for="Student_ID"></label>
-						<?php $Student_ID = rand(10001,32768); ?>
+                        <?php $Student_ID = rand(10001, 32768); ?>
                         <input type="hidden" class="form-control" name="Student_ID" Value="<?php echo $Student_ID; ?>" />
 
                         <div class="form-group col-md-6">
@@ -126,7 +126,7 @@ if ($conn->connect_error) die($conn->connect_error);
                             <label for="Email">Email</label>
                             <input type="email" class="form-control" name="Email" id="Email" Value="user@utah.edu" />
                         </div>
-						<div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
                             <label for="Major">Major</label>
                             <select name="Major" id="Major" class="form-control">
                                 <option selected placeholder> -- Major/Program -- </option>
@@ -225,16 +225,16 @@ if (
     isset($_POST['State']) &&
     isset($_POST['Zip'])
 ) {
-	$fname = $_POST['Fname'];
-	$lname = $_POST['Lname'];
-	$email = $_POST['Email'];
+    $fname = $_POST['Fname'];
+    $lname = $_POST['Lname'];
+    $email = $_POST['Email'];
     $address = $_POST['Address'];
     $city = $_POST['City'];
     $state = $_POST['State'];
     $zip = $_POST['Zip'];
-	$program = $_POST['Major'];
-	$advisor = 2;
-    echo $state;
+    $program = $_POST['Major'];
+    $advisor = 2;
+
     $query = "INSERT into Student (Student_ID, Fname, Lname, Email, Address, City, Addr_State, ZIP, Advisor_ID, Program_ID)
 				VALUES ($Student_ID, '$fname', '$lname', '$email', '$address', '$city', '$state', '$zip', $advisor, $program);";
     $result = $conn->query($query);
@@ -247,7 +247,7 @@ if (
     }
     $conn->close();
     echo "<meta http-equiv='refresh' content='0'>";
-} else echo "Fill yo fields";
+} else echo "";
 
 $conn->close();
 

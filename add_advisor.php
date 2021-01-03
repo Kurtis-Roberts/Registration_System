@@ -74,7 +74,7 @@ if ($conn->connect_error) die($conn->connect_error);
                     <i class="fas fa-user-edit fa-5x fa-border" data-toggle="modal" data-target="#myModal">
                 </button></i>
                 <div class="student-info-container">
-                    <h3 class="modal-title">Create an Advisor</h3>
+                    <h3 class="modal-title">Add an Advisor</h3>
                 </div>
                 <hr style="width: 99%; color: white; height: 1px;;background-color:white;" />
 
@@ -108,7 +108,7 @@ if ($conn->connect_error) die($conn->connect_error);
                     <div class="form-row">
 
                         <label for="Advisor_ID"></label>
-						<?php $Advisor_ID = rand(10001,32768); ?>
+                        <?php $Advisor_ID = rand(10001, 32768); ?>
                         <input type="hidden" class="form-control" name="Advisor_ID" Value="<?php echo $Advisor_ID; ?>" />
 
                         <div class="form-group col-md-6">
@@ -119,7 +119,7 @@ if ($conn->connect_error) die($conn->connect_error);
                             <label for="Lname">Last Name</label>
                             <input type="text" class="form-control" name="Lname" id="Lname" Value="Smith" />
                         </div>
-                    
+
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Save</button>
                 </form>

@@ -45,7 +45,7 @@ CREATE TABLE Enrollment
 	Grade			VARCHAR(2),
 	Date_Enrolled	DATE,
 	Date_Dropped	DATE,
-	Status			VARCHAR(10) Default 'ENROLLED',
+	Status			VARCHAR(10) DEFAULT 'ENROLLED',
 	CONSTRAINT PK_Enrollment_Enroll_ID PRIMARY KEY (Enroll_ID)
 	);
 	
